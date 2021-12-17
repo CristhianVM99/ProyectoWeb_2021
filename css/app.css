@@ -7,6 +7,11 @@
     src: url('../fonts/Quicksand-VariableFont_wght.ttf');
 }
 
+/* 
+=============================================
+                FORMULARIO
+============================================= 
+*/
 body{
     margin: 0;
     padding: 0;
@@ -73,4 +78,15 @@ body{
     color: #fff;
     border-radius: 20px;
     margin-top: 20px;
+}
+
+/* 
+=============================================
+                PRINCIPAL
+============================================= 
+*/
+
+.container{
+    display: grid;
+    
 }
