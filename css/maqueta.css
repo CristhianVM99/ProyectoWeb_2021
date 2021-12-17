@@ -1,0 +1,71 @@
+
+@font-face {
+    font-family: "Ruso";
+    src: url('../fonts/RussoOne-Regular.ttf');
+}
+@font-face {
+    font-family: "Quick";
+    src: url('../fonts/Quicksand-VariableFont_wght.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #E6E6E6;
+}
+
+#container{
+    display: grid;
+    width: 90vw;
+    margin: auto;
+    padding: 20px;
+
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+    "header     header      header"
+    "principal  principal   principal"
+    "principal  principal   principal"
+    "footer     footer      footer"
+    ;
+}
+
+#cabecera{
+    /* estilos */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #01ACB4;
+
+    /* area-grid */
+    grid-area: header;
+
+}
+#cabecera h1{
+    font-family: Ruso;
+}
+#principal{
+    /* estilos */
+    background-color: #787D85;
+    font-family: Quick;
+
+    /* area-grid */
+    grid-area: principal;
+}
+#pie{
+    /* estilos */
+    background-color: #212730;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #E6E6E6;
+    font-family: monospace;
+
+    /* area-grid */
+    grid-area: footer;
+
+}

@@ -1,41 +1,41 @@
-*{
-    margin: 0;
-    padding: 0;
+/* definicion de fuentes de texto */
+
+@font-face {
+    font-family: "Ruso";
+    src: url('../fonts/RussoOne-Regular.ttf');
+}
+@font-face {
+    font-family: "Quick";
+    src: url('../fonts/Quicksand-VariableFont_wght.ttf');
 }
 
-#container{
-    display: grid;
-    width: 90vw;
-    margin: auto;
+/* estilos con selectores de elementos */
 
-    grid-gap: 20px;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(4,1fr);
-    grid-template-areas: 
-    "header     header      header"
-    "principal  principal   principal"
-    "principal  principal   principal"
-    "footer     footer      footer"
-    ;
+body{
+    background-color: #E6E6E6;
+    font-size: 14px;
 }
 
-#cabecera{
-    /* estilos */
-    text-align: center;
-
-    /* area-grid */
-    grid-area: header;
-
+h2{
+    font-family: Ruso;
+    font-size: 2em;
 }
-#principal{
-    /* estilos */
 
-    /* area-grid */
-    grid-area: principal;
+/* otros selectores */
+
+div.form_login label{
+    display: block;
+    color: #fff;
 }
-#pie{
-    /* estilos */
+.form_login{
+    width: 100%;
+    border: 1px solid #787D85;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #01ACB4;
+    clear: both;
+}
 
-    /* area-grid */
-    grid-area: footer;
+div.form_login h2{
+    color: #fff;
 }
