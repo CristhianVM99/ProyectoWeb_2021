@@ -27,7 +27,7 @@ p{
 .cont_login{
     margin: 0;
     padding: 0;
-    background-image: url(../img/img003.jpg);
+    background-image: url(../img/img006.jpg);
     background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;
@@ -159,7 +159,7 @@ p{
     flex-direction: row;
     grid-area: principal;
     height: 580px;
-    background-image: url(../img/img003.jpg);
+    background-image: url(../img/img006.jpg);
     background-size: cover;
 }
 .principal .logo_principal{
