@@ -19,11 +19,15 @@ h2{
 p{
     font-family: Quick;
 }
+
 /* 
 =============================================
                 FORMULARIO
 ============================================= 
 */
+
+/* CONTENEDOR DEL LOGIN */
+
 .cont_login{
     margin: 0;
     padding: 0;
@@ -32,6 +36,9 @@ p{
     height: 100vh;
     background-repeat: no-repeat;
 }
+
+/* FORMULARIO */
+
 .form_login{
     width: 320px;
     height: 420px;
@@ -42,7 +49,8 @@ p{
     position: absolute;
     transform: translate(-50% ,-50%);
     box-sizing: border-box;
-    padding: 70px 30px;
+    padding: 80px 30px;
+    box-shadow: 2px 2px 5px rgba(250,178,61,.5);
 }
 .blog_log{
     background-color: #000;
@@ -53,6 +61,10 @@ p{
     top: -50px;
     left: calc(50% - 50px);
     border: 2px solid #262626;
+}
+.blog_log:hover{
+    transition: all .5s;
+    border: 2px solid #FAB23D;
 }
 .form_login h2{
     margin: 0;
@@ -67,6 +79,12 @@ p{
     display: block;
     font-family: Quick;
 }
+.form_login label:hover,
+.form_login h2:hover
+{
+    transition: all .3s;
+    color: #FAB23D;
+}
 .form_login input{
     width: 100%;
     margin-bottom: 20px;
@@ -80,7 +98,7 @@ p{
     outline: none;
     height: 40px;
     font-size: 16px;
-    color: #fff;
+    color: #FAB23D;
 }
 .form_login button{
     width: 100%;
@@ -91,6 +109,11 @@ p{
     color: #fff;
     border-radius: 20px;
     margin-top: 20px;
+    transition:all .5s;
+}
+.form_login button:hover{
+    background-color: rgba(250,178,61,.7);
+    transition:all .5s;
 }
 
 /* 
@@ -98,6 +121,9 @@ p{
                 PRINCIPAL
 ============================================= 
 */
+
+/* CONTENEDOR PRINCIPAL PARA TODAS LAS 
+PAGINAS DISEÑADO CON GRID */
 
 .container{
     display: grid;
@@ -154,6 +180,11 @@ p{
 .box_social a:hover{
     color:#FFC812;
 }
+
+/* 
+CONTENIDO INICIAL - PRINCIPAL 
+*/
+
 .principal{
     display: flex;
     flex-direction: row;
@@ -161,22 +192,35 @@ p{
     height: 580px;
     background-image: url(../img/img006.jpg);
     background-size: cover;
+    justify-content: space-around;
 }
 .principal .logo_principal{
-    min-width: 350px;
+    min-width: 400px;
     background-image: url(../img/leon5.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
 .principal .art-1,
 .principal .art-2{
+    max-width: 420px;
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 20px;
 }
+.principal .art-1 h2,
+.principal .art-2 h2{
+    color: #FAB23D;
+    text-shadow: 1px 2px rgba(0, 0, 0, .5);
+}
+
+/*
+CONTENIDO DE LOS PROYECTOS
+*/
+
 .contenido_proyectos{
     grid-area: proyecto;
 }
@@ -199,11 +243,13 @@ p{
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
+    background-color: rgba(0, 0, 0, .1);
+    color: #000;
+    border-radius: 50px;
 }
 .contenido_proyectos .ultimos_trabajos .work_item img{
     width: 100%;
-    border-radius: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 .contenido_proyectos .ultimos_trabajos .work_item a{
     background-color: #262626;
@@ -212,15 +258,24 @@ p{
     text-decoration: none;
     border-radius: 20px;
     color: #FAB23D;
+    transition: all .5s;
+    font-family: Quick;
+    font-weight: 800;
+}
+.contenido_proyectos .ultimos_trabajos .work_item a:hover{
+    background-color: #FAB23D;
+    color: #262626;
+    border: 1px 1px solid rgba(0, 0, 0, .5);
 
 }
 
+/*
+CONTENIDO DEL FOOTER
+*/
+
 .contenedor_pie {
     grid-area: footer;
-    background-image: url(../img/img003.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    color: #fff;
+    margin-top: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -228,6 +283,9 @@ p{
 }
 .contenedor_pie .contenedor_listados{
     display: flex;
+    background-image: url(../img/img003.jpg);
+    background-size: cover;
+    background-attachment: fixed;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
@@ -242,6 +300,11 @@ p{
     text-align: center;
     border-radius: 20px;
     font-family: Quick;
+    transition: all .3s;
+}
+.contenedor_pie .contenedor_listados .ult_articulos li:hover,
+.contenedor_pie .contenedor_listados .exp_laboral li:hover{
+    background-color: #b37513;
 }
 .contenedor_pie .contenedor_listados .ult_articulos a,
 .contenedor_pie .contenedor_listados .exp_laboral a{
@@ -252,15 +315,20 @@ p{
 
 .contenedor_pie .contenedor_listados .ult_articulos h2,
 .contenedor_pie .contenedor_listados .exp_laboral h2{
-    padding: 10px;
-    margin: 15px;
+    padding: 10px 30px;
+    margin: 10px;
+    font-size: 2em;
     color: rgba(250, 178, 61, .7);
     text-align: center;
     background-color: #000;
+    clip-path: polygon(0% 0%, 90% 0, 100% 50%, 90% 100%, 0% 100%);
 }
 .contenedor_pie .pie{
     padding: 20px;
     text-align: center;
+    font-family: Quick;
+    font-size: 20px;
+    color: #000;
 }
 
 /* 
@@ -274,6 +342,7 @@ p{
     grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 4;
+
 }
 .portafolio .portafolio_1,
 .portafolio .portafolio_2,
@@ -301,5 +370,7 @@ p{
     height: 100%;
     background-color: #FAB23D;
 }
+
+
 
 

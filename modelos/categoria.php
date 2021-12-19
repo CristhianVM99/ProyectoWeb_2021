@@ -6,16 +6,24 @@
         private $nombre_tabla;
 
         /*
+        ============================================
         CONSTRUCTOR
         descripcion: Conecta A la Base De Datos
-
+        ============================================
         */
+        
         public function __construct(){
             parent::__construct(); //conexion a la base de datos
             $this->id = 'cad_id';
             $this->nombre_tabla = 'categoria';
         }
-        //Obtener todos los registros de la tabla categoria
+
+        /*
+        ====================================================
+        Obtener todos los registros de la tabla categoria
+        ====================================================
+        */
+        
         public function get_all(){
             $consulta = "SELECT * FROM categoria";
             $resultado = $this->db->query($consulta);
@@ -27,7 +35,13 @@
                 $this->db->close();
             }
         }
-        //Obtener 1 registro de la tabla categoria cuyo ID se envia por parametro
+
+        /*
+        ===========================================================================
+        Obtener 1 registro de la tabla categoria cuyo ID se envia por parametro
+        ===========================================================================
+        */
+
         public function get($id){
             $consulta = "SELECT * FROM $this->nombre_tabla where $this->id = ".$id;
             $resultado = $this->db->query($consulta);
@@ -39,8 +53,13 @@
                 $this->db->close();
             }
         }
-        //Guardar 1 registro en BD
-        // $data['cat_nombre'] = "ALGORITMOS"//input
+
+        /*
+        ===========================================================================
+        Guardar 1 registro en BD
+        ===========================================================================
+        */
+        
         public function store($data){//array[]
             $consulta = "INSERT INTO $this->nombre_tabla (cat_nombre) values ('".$data['cat_nombre']."');";
             $resultado = $this->db->query($consulta);
@@ -53,8 +72,12 @@
             }
         }
 
-        //Actualizar 1 registro en BD
-        // $data['cat_nombre'] = "ALGORITMOS"//input
+        /*
+        ===========================================================================
+        Actualizar 1 registro en BD
+        ===========================================================================
+        */
+        
         public function update($id, $data){//array[]
             $consulta = "UPDATE $this->nombre_tabla SET cat_nombre = '".$data['cat_nombre']."' WHERE $this->id =".$id;
             $resultado = $this->db->query($consulta);
@@ -67,7 +90,12 @@
             }
         }
 
-        //Eliminar 1 Registro en BD
+        /*        
+        ===============================
+        Eliminar 1 Registro en BD
+        ===============================
+        */
+        
         public function delete($id){//array[]
             $consulta = "DELETE FROM $this->nombre_tabla WHERE $this->id =".$id;
             $resultado = $this->db->query($consulta);

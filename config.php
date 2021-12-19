@@ -8,6 +8,14 @@ define('APP_URL','http://localhost/PROYECTOWEB_2021/');
 
 /*
 ===============================================
+PAGINA PRINCIPAL DEL BLOG
+===============================================
+*/
+
+define('DEFAULT_PAGE','pages/inicio.php');
+
+/*
+===============================================
 CONFIGURACION DE CONEXIONES A LA BASE DE DATOS
 ===============================================
 */
