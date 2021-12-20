@@ -358,16 +358,7 @@ CONTENIDO DEL FOOTER
 .contenido{
     grid-area: principal;
 }
-.portafolio{
-    /* height: 100%; */
-    /* grid-area: principal; */
-    /* display: grid;
-    grid-row-start: 2;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 4; */
 
-}
 .portafolio .portafolio_1,
 .portafolio .portafolio_2,
 .portafolio .portafolio_3{
