@@ -438,13 +438,7 @@ grid-area: principal;
     clip-path: polygon(5% 0, 100% 0%, 100% 100%, 5% 100%, 0% 50%);
 }
 #user_menu{
-    /* display: block; */
-    /* background-color: rgba(0, 0, 0, .7); */
-    /* border: 1px solid #111; */
-    /* position: absolute; */
-    /* right: 10px; */
-    /* top: 70px; */
-    /* width: 20vw; */
+
     visibility: hidden;
 }
 
