@@ -1,7 +1,7 @@
 <?php
     require_once('modelo.php');
     // modelo categoria
-    class cateroria extends Modelo{
+    class articulo extends Modelo{
         private $id;
         private $nombre_tabla;
 
@@ -25,7 +25,7 @@
         */
 
         public function get_all(){
-            $consulta = "SELECT * FROM articulo";
+            $consulta = "SELECT * FROM $this->nombre_tabla";
             $resultado = $this->db->query($consulta);
             if(!$resultado){
                 echo "Error al listar lo datos de la tabla";
@@ -61,9 +61,13 @@
         */
         
         public function store($data){//array[]
-            $consulta = "INSERT INTO $this->nombre_tabla (cat_nombre) values ('".$data['cat_nombre']."');";
-            $resultado = $this->db->query($consulta);
-            if(!$resultado){
+            // $consulta = "INSERT INTO $this->nombre_tabla (cat_nombre) values ('".$data['cat_nombre']."');";
+            // $resultado = $this->db->query($consulta);
+            $resultado = $this->db->prepare("INSERT INTO $this->nombre_tabla(cad_id, usu_id, art_titulo, art_resumen, art_detalle) values (?,?,?,?,?)");
+            $resultado->bind_param("iisss", $data['cat_id'], $data['usu_id'], $data['art_titulo'], $data['art_resumen'], $data['art_detalle']);
+            if($resultado ->execute()){
+            // if(!$resultado){
+                return null;
                 echo "Error al registrar datos";
             }else{
                 return $resultado;

@@ -1,7 +1,7 @@
 <?php
     require_once('modelo.php');
     // modelo categoria
-    class cateroria extends Modelo{
+    class usuario extends Modelo{
         private $id;
         private $nombre_tabla;
 
@@ -25,7 +25,7 @@
         */
 
         public function get_all(){
-            $consulta = "SELECT * FROM usuario";
+            $consulta = "SELECT * FROM $this->nombre_tabla";
             $resultado = $this->db->query($consulta);
             if(!$resultado){
                 echo "Error al listar lo datos de la tabla";
@@ -46,6 +46,24 @@
             $resultado = $this->db->query($consulta);
             if(!$resultado){
                 echo "Error al obtener el elemento con ID";
+            }else{
+                return $resultado->fetch_assoc();//obj array - asociativo un registro
+                $resultado->close();
+                $this->db->close();
+            }
+        }
+
+        /*
+        ===========================================================================
+        GET POR USUARIO
+        ===========================================================================
+        */
+
+        public function get_por_usuario($usr){
+            $consulta = "SELECT * FROM $this->nombre_tabla where usu_usr = '".$usr."'";
+            $resultado = $this->db->query($consulta);
+            if(!$resultado){
+                return null;
             }else{
                 return $resultado->fetch_assoc();//obj array - asociativo un registro
                 $resultado->close();

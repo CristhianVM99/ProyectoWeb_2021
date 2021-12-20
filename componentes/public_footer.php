@@ -1,4 +1,6 @@
-    <footer class="contenedor_pie">
+</div>
+        <!-- CONTENIDO FOOTER -->
+        <footer class="contenedor_pie">
                 <div class="contenedor_listados">
                     <div class="ult_articulos">
                         <h2>

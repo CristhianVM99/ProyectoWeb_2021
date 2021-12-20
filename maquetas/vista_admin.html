@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal (HOME)</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../assets/css/brands.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- CONTENIDO CABECERA -->
+        <header class="cabecera">
+            <div class="logo">
+                <img class="menu_log" src="../assets/img/log2.jpg" alt="logo de mi blog">
+            </div>
+            <div>
+                <ul class="top_menu">
+                    <li>
+                        <i class="fas fa-home"></i>
+                        <a href="#">Inicio</a>
+                    </li>    
+                </ul>
+            </div>
+
+            <div class="box_social">
+                <div id="user_menu">
+                    <div class="lista_barra">
+                        <ul>
+                            <li><a href="#">Ver Perfil</a></li>
+                            <li><a href="#">Actualizar Contraseña</a></li>
+                            <li><a href="#">Cerrar</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <a href="#" class="btn" id="btn_user">
+                    <i class="fas fa-user"></i>
+                    USUARIO
+                </a>               
+            </div>
+        </header>
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="contenido">
+            <div class="vista">
+                <div class="contenedor_39">
+                    <div class="barra_lateral">
+                        <div class="lista_barra">
+                            <h2>
+                                Modulos
+                            </h2>
+                            <ul>
+                                <li><a href="#">Administrar articulo</a></li>
+                                <li><a href="#">Administrar hoja de vida</a></li>
+                                <li><a href="#">Administrar proyecto</a></li>
+                                <li><a href="#">Administrar contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contendedor_principal">
+                        <div>
+                            <h2>Nuevo Registro</h2>
+                            Contenido de la Pagina en particular
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CONTENIDO FOOTER -->
+        <footer class="contenedor_pie">
+                <div class="pie">
+                    &copy; Blog Personal  -  2021
+                </div>
+        </footer>
+    </div>
+</body>
+<script>
+    var btn_user = document.getElementById('btn_user');
+    btn_user.addEventListener('click',function(){
+        var user_menu=document.getElementById('user_menu');
+        if(user_menu.style.visibility=="visible"){
+            user_menu.style.visibility = "hidden";
+        }else{
+            user_menu.style.visibility = "visible";
+        }
+
+    });
+</script>
+
+</html>

@@ -1,4 +1,5 @@
-    <div class="container">
+<div class="container">
+        <!-- CONTENIDO CABECERA -->
         <header class="cabecera">
             <div class="logo">
                 <img class="menu_log" src="<?php echo APP_URL?>assets/img/log2.jpg" alt="logo de mi blog">
@@ -42,3 +43,5 @@
                 </a>                
             </div>
         </header>
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="contenido">

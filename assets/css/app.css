@@ -19,6 +19,28 @@ h2{
 p{
     font-family: Quick;
 }
+input,select,textarea,button, .btn{
+    font-family: Quick;
+    padding: 5px 10px;
+    font-size: 1.5em;
+    margin: 7px;
+    border: 1px solid #b37513;
+    border-radius: 3px;
+}
+button, .btn{
+    font-size: 1.1em;
+    margin: 10px 1px;
+    background-color: #FAB23D;
+    border: 1px solid #ccc;
+}
+.btn_oscuro{
+    background-color: #262626;
+    color: #fff;
+}
+.btn_oscuro:hover{
+    color: #fff;
+    background-color: #262626;
+}
 
 /* 
 =============================================
@@ -128,11 +150,10 @@ PAGINAS DISEÑADO CON GRID */
 .container{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 100px 580px 1fr;
+    grid-template-rows: 100px 2fr 430px;
     grid-template-areas: 
     "header     header      header"
     "principal  principal   principal"
-    "proyecto   proyecto    proyecto"
     "footer     footer      footer"
 }
 .container .cabecera{
@@ -184,11 +205,12 @@ PAGINAS DISEÑADO CON GRID */
 /* 
 CONTENIDO INICIAL - PRINCIPAL 
 */
-
+.contenido{
+    grid-area: principal;
+}
 .principal{
     display: flex;
     flex-direction: row;
-    grid-area: principal;
     height: 580px;
     background-image: url(../img/img006.jpg);
     background-size: cover;
@@ -221,9 +243,6 @@ CONTENIDO INICIAL - PRINCIPAL
 CONTENIDO DE LOS PROYECTOS
 */
 
-.contenido_proyectos{
-    grid-area: proyecto;
-}
 .contenido_proyectos .titular_trabajos{
     background-color: #000;
     color: #FAB23D;
@@ -275,9 +294,9 @@ CONTENIDO DEL FOOTER
 
 .contenedor_pie {
     grid-area: footer;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     display: flex;
-    justify-content: space-around;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 }
@@ -336,12 +355,17 @@ CONTENIDO DEL FOOTER
                 PORTAFOLIO
 ============================================= 
 */
+.contenido{
+    grid-area: principal;
+}
 .portafolio{
-    display: grid;
+    /* height: 100%; */
+    /* grid-area: principal; */
+    /* display: grid;
     grid-row-start: 2;
     grid-row-end: 4;
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 4; */
 
 }
 .portafolio .portafolio_1,
@@ -349,11 +373,14 @@ CONTENIDO DEL FOOTER
 .portafolio .portafolio_3{
     display: flex;
     align-items: center;
+    background-color: #FAB23D;
+    /* height: 50%; */
 }
 .portafolio .portafolio_1 img,
 .portafolio .portafolio_2 img,
 .portafolio .portafolio_3 img{
     width: 100%;
+    height: 100%;
 }
 .portafolio .portafolio_1 .img_p,
 .portafolio .portafolio_2 .img_p,
@@ -361,16 +388,127 @@ CONTENIDO DEL FOOTER
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 .portafolio .descripcion_proyecto{
     display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    height: 100%;
-    background-color: #FAB23D;
+    /* height: 500; */
 }
 
+/* 
+=============================================
+                VISTA_ADMIN
+============================================= 
+*/
 
+.vista{
+grid-area: principal;
+}
+.contenedor_39{
+    display: grid;
+    background-color: #eee;
+    grid-template-columns: 3fr 9fr;
 
+}
+.barra_lateral{
+    display: block;
+    background-color: #ccc;
+    min-height: 80vh;
+}
+.lista_barra h1{
+    padding: 10px;
+    border-bottom: 1px solid #777;
+}
+.lista_barra ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.lista_barra li,
+.lista_barra a{
+    display: block;
+}
+.lista_barra a{
+    margin: 5px;
+    padding: 15px 5px;
+    color: #fff;
+    background-color: rgba(90, 90, 90, .85);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-left: 4px solid #333;
+}
+.lista_barra a:hover{
+    background-color: rgba(120, 120, 120, .8);
+    border-left: 4px solid #333;
+}
 
+#btn_user{
+    clip-path: polygon(5% 0, 100% 0%, 100% 100%, 5% 100%, 0% 50%);
+}
+#user_menu{
+    /* display: block; */
+    /* background-color: rgba(0, 0, 0, .7); */
+    /* border: 1px solid #111; */
+    /* position: absolute; */
+    /* right: 10px; */
+    /* top: 70px; */
+    /* width: 20vw; */
+    visibility: hidden;
+}
+
+/* 
+=============================================
+                LISTAR_ARTICULOS
+============================================= 
+*/
+
+.contenedor_principal{
+    padding: 10px;
+    /* text-align: center; */
+}
+table{
+    table-layout: auto;
+    width: 100%;
+    border: 1px solid #777;
+    border-collapse: collapse;
+}
+table, th, td{
+    border: 1px solid #777;
+    padding: 7px;
+}
+
+/* 
+=============================================
+                GRID DE FORMULARIOS
+============================================= 
+*/
+
+.grid_1, .grid_3{
+    display: grid;
+    grid-gap: 10px;
+}
+.grid_1{
+    grid-template-columns: 1fr;
+}
+.grid_3{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+form label{
+    display: block;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-weight: bold;
+    font-family: Quick;
+
+}
+input, select, textarea{
+    display: block;
+    /* width: 90%; */
+}
+
+.form_item{
+    display: grid;
+    grid-template-columns: 1fr;
+}
